@@ -19,4 +19,9 @@
         android:name="com.example.saktest.agenda"
         android:label="fragment_agenda"
         tools:layout="@layout/fragment_agenda" />
+    <fragment
+        android:id="@+id/klok"
+        android:name="com.example.saktest.Klok"
+        android:label="fragment_klok"
+        tools:layout="@layout/fragment_klok" />
 </navigation>
