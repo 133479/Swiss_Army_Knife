@@ -18,10 +18,9 @@
         android:id="@+id/agenda"
         android:name="com.example.saktest.agenda"
         android:label="fragment_agenda"
-        tools:layout="@layout/fragment_agenda" />
-    <fragment
-        android:id="@+id/klok"
-        android:name="com.example.saktest.Klok"
-        android:label="fragment_klok"
-        tools:layout="@layout/fragment_klok" />
+        tools:layout="@layout/fragment_agenda" >
+        <action
+            android:id="@+id/action_agenda_to_landing"
+            app:destination="@id/landing" />
+    </fragment>
 </navigation>
