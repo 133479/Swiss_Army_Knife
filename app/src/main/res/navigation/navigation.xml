@@ -20,7 +20,16 @@
         android:label="fragment_agenda"
         tools:layout="@layout/fragment_agenda" >
         <action
-            android:id="@+id/action_agenda_to_landing"
-            app:destination="@id/landing" />
+            android:id="@+id/action_agenda_to_klok"
+            app:destination="@id/klok" />
+    </fragment>
+    <fragment
+        android:id="@+id/klok"
+        android:name="com.example.saktest.Klok"
+        android:label="fragment_klok"
+        tools:layout="@layout/fragment_klok" >
+        <action
+            android:id="@+id/action_klok_to_agenda"
+            app:destination="@id/agenda" />
     </fragment>
 </navigation>

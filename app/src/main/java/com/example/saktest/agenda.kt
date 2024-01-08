@@ -37,7 +37,7 @@ class agenda : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_agenda, container, false)
-        view.findViewById<Button>(R.id.btn_agenda_clock).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_agenda_to_landing)
+        view.findViewById<Button>(R.id.btn_agenda_clock).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_agenda_to_klok)
         }
         return view
     }
