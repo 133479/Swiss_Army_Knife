@@ -11,6 +11,9 @@
         android:label="fragment_landing"
         tools:layout="@layout/fragment_landing" >
         <action
+            android:id="@+id/action_landing_to_klok"
+            app:destination="@id/klok" />
+        <action
             android:id="@+id/action_landing_to_agenda"
             app:destination="@id/agenda" />
     </fragment>
