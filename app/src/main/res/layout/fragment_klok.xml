@@ -5,6 +5,8 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:backgroundTint="#FBFBFB"
     tools:context=".landing">
 
     <!-- TODO: Update blank fragment layout -->
@@ -22,37 +24,39 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.303" />
 
-    <Button
-        android:id="@+id/Klokknop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="94dp"
-        android:text="Klok"
-        app:layout_constraintBottom_toTopOf="@+id/clock"
-        app:layout_constraintEnd_toStartOf="@+id/Agendaknop"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/Agendaknop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Agenda"
-        app:layout_constraintBottom_toTopOf="@+id/clock"
+    <LinearLayout
+        android:layout_width="468dp"
+        android:layout_height="111dp"
+        android:layout_marginStart="64dp"
+        android:background="#00575656"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16" />
+        app:layout_constraintVertical_bias="0.0">
 
-    <Button
-        android:id="@+id/kompasknop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="93dp"
-        android:text="Kompas"
-        app:layout_constraintBottom_toTopOf="@+id/clock"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Agendaknop"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/Agendaknop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50px"
+            android:text="Agenda" />
+
+        <Button
+            android:id="@+id/kompasknop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50px"
+            android:text="Kompas" />
+
+        <Button
+            android:id="@+id/Klokknop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50px"
+            android:text="Klok" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
