@@ -5,6 +5,8 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#808080"
+    android:backgroundTint="#808080"
     tools:context=".agenda">
 
     <!-- TODO: Update blank fragment layout -->
@@ -42,5 +44,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_agenda_agenda"
         tools:layout_editor_absoluteY="33dp" />
+
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="415dp"
+        android:layout_height="404dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
