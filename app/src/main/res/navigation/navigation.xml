@@ -31,5 +31,13 @@
         <action
             android:id="@+id/action_klok_to_agenda"
             app:destination="@id/agenda" />
+        <action
+            android:id="@+id/action_klok_to_kompas"
+            app:destination="@id/kompas" />
     </fragment>
+    <fragment
+        android:id="@+id/kompas"
+        android:name="com.example.saktest.kompas"
+        android:label="fragment_kompas"
+        tools:layout="@layout/fragment_kompas" />
 </navigation>

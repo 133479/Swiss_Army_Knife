@@ -103,5 +103,61 @@
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="-30dp" />
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="102dp"
+        android:text="klok"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.488" />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="376dp"
+        android:layout_height="248dp"
+        android:layout_gravity="bottom"
+        app:backgroundTint="#D9D9D9"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="389dp" />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar3"
+        app:backgroundTint="#494949"
+        android:layout_width="308dp"
+        android:layout_height="57dp"
+        android:layout_gravity="bottom"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="404dp" />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar3"
+        android:layout_width="308dp"
+        android:layout_height="57dp"
+        android:layout_gravity="bottom"
+        app:backgroundTint="#494949"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="480dp" />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar3"
+        android:layout_width="308dp"
+        android:layout_height="57dp"
+        android:layout_gravity="bottom"
+        app:backgroundTint="#494949"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="556dp" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="56dp"
+        android:layout_height="37dp"
+        tools:layout_editor_absoluteX="274dp"
+        tools:layout_editor_absoluteY="417dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
