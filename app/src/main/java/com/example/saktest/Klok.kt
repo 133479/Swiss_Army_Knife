@@ -1,16 +1,18 @@
 package com.example.saktest
 
+import android.app.AlarmManager
+import android.app.PendingIntent
+import android.content.Context
+import android.content.Intent
 import android.icu.text.SimpleDateFormat
 import android.icu.util.Calendar
-import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
+import android.media.RingtoneManager
+import android.os.*
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.TextView
+import android.widget.*
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import java.util.*
@@ -60,6 +62,7 @@ class Klok : Fragment() {
 
     }
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -71,6 +74,24 @@ class Klok : Fragment() {
 
         view.findViewById<ImageButton>(R.id.clock_to_kompas).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_klok_to_kompas)
         }
+        val alarmManager = context!!.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+       view.findViewById<Switch>(R.id.s_7_00).setOnCheckedChangeListener { _, isChecked ->
+           if (isChecked) {
+               Toast.makeText(activity, "Jesse wordt wakker doofus", Toast.LENGTH_SHORT).show();
+               val calendar = Calendar.getInstance()
+               // krijg de current tijd van calender
+               calendar.set(Calendar.MINUTE, 15)
+               calendar.set(Calendar.HOUR, 7)
+
+
+
+
+
+
+           } else {
+               // The switch isn't checked.
+           }
+       }
 
         return view
     }
@@ -95,3 +116,8 @@ class Klok : Fragment() {
             }
     }
 }
+
+
+
+
+

@@ -127,17 +127,18 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView77"
+                    android:id="@+id/t_0700"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="07:00" />
 
                 <Switch
-                    android:id="@+id/switch1"
+                    android:id="@+id/s_7_00"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
             </LinearLayout>
 
             <LinearLayout
@@ -146,14 +147,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView77"
+                    android:id="@+id/t_7030"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView" />
 
                 <Switch
-                    android:id="@+id/switch1"
+                    android:id="@+id/s_7_30"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
