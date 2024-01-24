@@ -5,15 +5,17 @@
     android:id="@+id/frameLayout4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:rotation="-90"
     tools:context=".kompas">
 
 
     <ImageView
-        android:id="@+id/imageViewCompass"
+        android:id="@+id/compassimage"
         android:layout_width="310dp"
         android:layout_height="310dp"
-        android:layout_below="@+id/tvHeading"
+        android:layout_below="@+id/compasheading"
         android:layout_centerHorizontal="true"
+        android:rotation="90"
         android:src="@drawable/kompas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvHeading"
+        android:id="@+id/compasheading"
         android:layout_width="341dp"
         android:layout_height="66dp"
         android:layout_centerHorizontal="true"
@@ -29,7 +31,7 @@
         android:textAlignment="center"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageViewCompass"
+        app:layout_constraintBottom_toTopOf="@+id/compassimage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
