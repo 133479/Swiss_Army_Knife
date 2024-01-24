@@ -147,14 +147,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/t_7030"
+                    android:id="@+id/t_7015"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="TextView" />
+                    android:text="07:15" />
 
                 <Switch
-                    android:id="@+id/s_7_30"
+                    android:id="@+id/s_0715"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
@@ -166,14 +166,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView77"
+                    android:id="@+id/t_0730"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="TextView" />
+                    android:text="07:30" />
 
                 <Switch
-                    android:id="@+id/switch1"
+                    android:id="@+id/s_0730"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
@@ -185,14 +185,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView77"
+                    android:id="@+id/t_0745"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="TextView" />
+                    android:text="07:45" />
 
                 <Switch
-                    android:id="@+id/switch1"
+                    android:id="@+id/s_0745"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
@@ -204,14 +204,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView77"
+                    android:id="@+id/t_0800"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="TextView" />
+                    android:text="08:00" />
 
                 <Switch
-                    android:id="@+id/switch1"
+                    android:id="@+id/s_0800"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
@@ -223,14 +223,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView77"
+                    android:id="@+id/t_0815"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="TextView" />
+                    android:text="08:15" />
 
                 <Switch
-                    android:id="@+id/switch1"
+                    android:id="@+id/s_0815"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
@@ -242,14 +242,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView77"
+                    android:id="@+id/t_0830"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="TextView" />
+                    android:text="08:30" />
 
                 <Switch
-                    android:id="@+id/switch1"
+                    android:id="@+id/s_0830"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
@@ -261,14 +261,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView77"
+                    android:id="@+id/t_0845"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="TextView" />
+                    android:text="08:45" />
 
                 <Switch
-                    android:id="@+id/switch1"
+                    android:id="@+id/s_0845"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
@@ -280,14 +280,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView77"
+                    android:id="@+id/t_0900"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="TextView" />
+                    android:text="09:00" />
 
                 <Switch
-                    android:id="@+id/switch1"
+                    android:id="@+id/s_0900"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
@@ -299,14 +299,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView77"
+                    android:id="@+id/t_0915"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="TextView" />
+                    android:text="09:15" />
 
                 <Switch
-                    android:id="@+id/switch1"
+                    android:id="@+id/s_0915"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
@@ -318,14 +318,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView77"
+                    android:id="@+id/t_0930"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="TextView" />
+                    android:text="09:30" />
 
                 <Switch
-                    android:id="@+id/switch1"
+                    android:id="@+id/s_0930"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
@@ -337,14 +337,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView77"
+                    android:id="@+id/t_0945"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="TextView" />
+                    android:text="09:45" />
 
                 <Switch
-                    android:id="@+id/switch1"
+                    android:id="@+id/s_0945"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
@@ -356,14 +356,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView77"
+                    android:id="@+id/t_1000"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="TextView" />
+                    android:text="10:00" />
 
                 <Switch
-                    android:id="@+id/switch1"
+                    android:id="@+id/s_1000"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
@@ -375,14 +375,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView77"
+                    android:id="@+id/t_1015"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="TextView" />
+                    android:text="10:15" />
 
                 <Switch
-                    android:id="@+id/switch1"
+                    android:id="@+id/s_1015"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />

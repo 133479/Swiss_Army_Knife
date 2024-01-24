@@ -74,6 +74,8 @@ class Klok : Fragment() {
 
         view.findViewById<ImageButton>(R.id.clock_to_kompas).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_klok_to_kompas)
         }
+
+
         val alarmManager = context!!.getSystemService(Context.ALARM_SERVICE) as AlarmManager
        view.findViewById<Switch>(R.id.s_7_00).setOnCheckedChangeListener { _, isChecked ->
            if (isChecked) {
@@ -88,33 +90,22 @@ class Klok : Fragment() {
 
 
 
+
+
+
            } else {
                // The switch isn't checked.
            }
+
+
+
        }
 
         return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Klok.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Klok().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
+
+
 }
 
 
