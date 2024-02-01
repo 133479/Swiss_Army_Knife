@@ -15,6 +15,7 @@ import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import com.google.android.material.switchmaterial.SwitchMaterial
 import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -77,7 +78,7 @@ class Klok : Fragment() {
 
 
         val alarmManager = context!!.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-       view.findViewById<Switch>(R.id.s_7_00).setOnCheckedChangeListener { _, isChecked ->
+       view.findViewById<SwitchMaterial>(R.id.s_7_00).setOnCheckedChangeListener { _, isChecked ->
            if (isChecked) {
                Toast.makeText(activity, "Jesse wordt wakker doofus", Toast.LENGTH_SHORT).show();
                val calendar = Calendar.getInstance()
