@@ -43,5 +43,9 @@
         android:id="@+id/kompas"
         android:name="com.example.saktest.kompas"
         android:label="fragment_kompas"
-        tools:layout="@layout/fragment_kompas" />
+        tools:layout="@layout/fragment_kompas" >
+        <action
+            android:id="@+id/action_kompas_to_klok"
+            app:destination="@id/klok" />
+    </fragment>
 </navigation>
