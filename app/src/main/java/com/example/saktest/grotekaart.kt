@@ -37,9 +37,9 @@ class grotekaart : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_grotekaart, container, false)
-        view.findViewById<ImageButton>(R.id.grotekaart_to_clock).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_grotekaart_to_klok)
-        }
+        var view = inflater.inflate(R.layout.fragment_grotekaart, container, false)
+
+        return view;
          }
     }
 
