@@ -15,6 +15,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.findFragment
 import androidx.navigation.Navigation
+import kotlinx.coroutines.delay
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -62,12 +63,12 @@ class kompas : Fragment(), SensorEventListener {
     }
 
     override fun onSensorChanged(event: SensorEvent) {
-        val x = event.values[0]
-        val y = event.values[1]
-        Log.println(Log.INFO, "SAK", "X is ${x.toString()}")
-        Log.println(Log.INFO, "SAK", "Y is ${y.toString()}")
-
-        //this.view.findViewById<TextView>(R.id.compasheading).text = x.toString();
+        val accelx = event.values[0]
+        val accely = event.values[1]
+        this.view?.findViewById<TextView>(R.id.compasheading)?.text = accely.toString()
+        Log.println(Log.INFO, "SAK", "X is ${accelx.toString()}")
+        Log.println(Log.INFO, "SAK", "Y is ${accely.toString()}")
+        Log.println(Log.INFO, "SAK", "z is ${accelz.toString()}")
     }
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {}
