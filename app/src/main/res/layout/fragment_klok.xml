@@ -26,8 +26,10 @@
             android:id="@+id/clock"
             android:layout_width="410dp"
             android:layout_height="100dp"
+            android:backgroundTint="#FFFFFF"
             android:text="klok"
             android:textAlignment="center"
+            android:textColor="#000"
             android:textSize="34sp" />
 
         <ScrollView
@@ -50,6 +52,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:backgroundTint="#000000"
+                        android:textColor="#000"
                         android:text="07:00" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -70,6 +74,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:textColor="#000"
                         android:text="07:15" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -89,6 +94,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:textColor="#000"
                         android:text="07:30" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -108,6 +114,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:textColor="#000"
                         android:text="07:45" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -127,6 +134,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:textColor="#000"
                         android:text="08:00" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -146,6 +154,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:textColor="#000"
                         android:text="08:15" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -165,6 +174,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:textColor="#000"
                         android:text="08:30" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -184,6 +194,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:textColor="#000"
                         android:text="08:45" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -203,6 +214,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:textColor="#000"
                         android:text="09:00" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -222,6 +234,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:textColor="#000"
                         android:text="09:15" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -241,6 +254,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:textColor="#000"
                         android:text="09:30" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -260,6 +274,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:textColor="#000"
                         android:text="09:45" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -279,6 +294,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:textColor="#000"
                         android:text="10:00" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
@@ -298,6 +314,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:textColor="#000"
                         android:text="10:15" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial

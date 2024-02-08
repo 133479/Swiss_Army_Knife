@@ -1,3 +1,5 @@
+//https://medium.com/@nipunvirat0/how-to-schedule-alarm-in-android-using-alarm-manager-7a1c3b23f1bb
+
 package com.example.saktest
 
 import android.app.AlarmManager
@@ -35,6 +37,9 @@ class Klok : Fragment() {
 
     private lateinit var currentTime: String
 
+    private var alarmMgr: AlarmManager? = null
+    private lateinit var alarmIntent: PendingIntent
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
 
@@ -46,6 +51,11 @@ class Klok : Fragment() {
                 mainHandler.postDelayed(this, 1000)
             }
         })
+        alarmMgr = context?.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        alarmIntent = Intent(context, AlarmReceiver::class.java).let { intent ->
+            PendingIntent.getBroadcast(context, 0, intent, 0)
+        }
+
 
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -83,10 +93,19 @@ class Klok : Fragment() {
        view.findViewById<SwitchMaterial>(R.id.s_7_00).setOnCheckedChangeListener { _, isChecked ->
            if (isChecked) {
                Toast.makeText(activity, "Jesse wordt wakker doofus", Toast.LENGTH_SHORT).show();
-               val calendar = Calendar.getInstance()
+               val calendar: Calendar = Calendar.getInstance().apply {
+                   timeInMillis = System.currentTimeMillis()
+                   set(Calendar.HOUR_OF_DAY, 14)
+               }
+               alarmMgr?.set(
+                   AlarmManager.ELAPSED_REALTIME_WAKEUP,
+                   SystemClock.elapsedRealtime() + 60 * 1000,
+                   alarmIntent
+               )
+               //val calendar = Calendar.getInstance()
                // krijg de current tijd van calender
-               calendar.set(Calendar.MINUTE, 15)
-               calendar.set(Calendar.HOUR, 7)
+               //calendar.set(Calendar.MINUTE, 15)
+               //calendar.set(Calendar.HOUR, 7)
 
 
 
