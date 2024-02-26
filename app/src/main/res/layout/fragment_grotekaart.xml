@@ -8,6 +8,7 @@
     tools:context=".grotekaart" >
 
     <HorizontalScrollView
+        android:id="@+id/scrolview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -21,7 +22,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/img_grotekaart"
                 android:layout_width="1500dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/de_kaart" />

@@ -8,13 +8,11 @@ import android.content.Context
 import android.content.Intent
 import android.icu.text.SimpleDateFormat
 import android.icu.util.Calendar
-import android.media.RingtoneManager
 import android.os.*
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.google.android.material.switchmaterial.SwitchMaterial
@@ -69,7 +67,7 @@ class Klok : Fragment() {
         val simpleDateFormat = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
 
         val currentTime = simpleDateFormat.format(calendar.time)
-        this.view?.findViewById<TextView>(R.id.clock)?.text = currentTime
+        this.view?.findViewById<TextView>(R.id.digitale_klok)?.text = currentTime
 
     }
 
