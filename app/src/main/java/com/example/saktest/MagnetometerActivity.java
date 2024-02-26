@@ -6,18 +6,20 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 
-public class SensorActivity extends Activity implements SensorEventListener {
-    private final SensorManager mSensorManager;
-    private final Sensor mAccelerometer;
+public class MagnetometerActivity extends Activity implements SensorEventListener {
 
-    public SensorActivity() {
+    // Sensors & SensorManager
+    private final Sensor Magnetometer;
+    private final SensorManager mSensorManager;
+
+    public MagnetometerActivity() {
         mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
-        mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        Magnetometer = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
     }
 
     protected void onResume() {
         super.onResume();
-        mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
+        mSensorManager.registerListener(this, Magnetometer, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     protected void onPause() {

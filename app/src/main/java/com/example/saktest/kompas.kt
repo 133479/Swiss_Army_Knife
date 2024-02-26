@@ -58,17 +58,17 @@ class kompas : Fragment(), SensorEventListener {
         }
         mSensorManager!!.registerListener(this,
             mSensorManager!!.getSensorList(Sensor.TYPE_ACCELEROMETER)[0], SensorManager.SENSOR_DELAY_FASTEST);
+//        mSensorManager!!.registerListener(this,
+//            mSensorManager!!.getSensorList(Sensor.TYPE_MAGNETIC_FIELD)[0], SensorManager.SENSOR_DELAY_FASTEST);
 
         return view
     }
-
     override fun onSensorChanged(event: SensorEvent) {
         val accelx = event.values[0]
         val accely = event.values[1]
         this.view?.findViewById<TextView>(R.id.compasheading)?.text = accely.toString()
         Log.println(Log.INFO, "SAK", "X is ${accelx.toString()}")
         Log.println(Log.INFO, "SAK", "Y is ${accely.toString()}")
-        Log.println(Log.INFO, "SAK", "z is ${accelz.toString()}")
     }
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {}
