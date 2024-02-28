@@ -16,6 +16,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.findFragment
 import androidx.navigation.Navigation
 import kotlinx.coroutines.delay
+import java.math.RoundingMode
+import java.text.DecimalFormat
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -58,17 +60,34 @@ class kompas : Fragment(), SensorEventListener {
         }
         mSensorManager!!.registerListener(this,
             mSensorManager!!.getSensorList(Sensor.TYPE_ACCELEROMETER)[0], SensorManager.SENSOR_DELAY_FASTEST);
-//        mSensorManager!!.registerListener(this,
-//            mSensorManager!!.getSensorList(Sensor.TYPE_MAGNETIC_FIELD)[0], SensorManager.SENSOR_DELAY_FASTEST);
+        mSensorManager!!.registerListener(this,
+            mSensorManager!!.getSensorList(Sensor.TYPE_MAGNETIC_FIELD)[0], SensorManager.SENSOR_DELAY_FASTEST);
 
         return view
     }
     override fun onSensorChanged(event: SensorEvent) {
-        val accelx = event.values[0]
-        val accely = event.values[1]
-        this.view?.findViewById<TextView>(R.id.compasheading)?.text = accely.toString()
-        Log.println(Log.INFO, "SAK", "X is ${accelx.toString()}")
-        Log.println(Log.INFO, "SAK", "Y is ${accely.toString()}")
+
+        if (event.sensor.type == Sensor.TYPE_MAGNETIC_FIELD) {
+
+            var mGeomagnetic = emptyArray<Float>()
+            //System.arraycopy(event.values, 0, mGeomagnetic, 0, 3);
+            Log.println(Log.INFO, "SAK", "Magneto[0]] ${event.values[0].toString()}")
+            val mag = event.values[0]
+            val df = DecimalFormat("#")
+            df.roundingMode = RoundingMode.CEILING
+            val magrounded = println(df.format(mag))
+            this.view?.findViewById<TextView>(R.id.compasheading)?.text = magrounded.toString()
+
+        }
+        if (event.sensor.type == Sensor.TYPE_ACCELEROMETER) {
+
+            val accelx = event.values[0]
+            val accely = event.values[1]
+            Log.println(Log.INFO, "SAK", "X is ${accelx.toString()}")
+            Log.println(Log.INFO, "SAK", "Y is ${accely.toString()}")
+
+        }
+
     }
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {}
@@ -105,6 +124,12 @@ class kompas : Fragment(), SensorEventListener {
             mSensorManager!!.getSensorList(Sensor.TYPE_ACCELEROMETER)[0],
             SensorManager.SENSOR_DELAY_FASTEST
         )
+        mSensorManager!!.registerListener(
+            this,
+            mSensorManager!!.getSensorList(Sensor.TYPE_MAGNETIC_FIELD)[0],
+            SensorManager.SENSOR_DELAY_FASTEST
+        )
+
     }
 
     private fun unregisterSensorListener() {

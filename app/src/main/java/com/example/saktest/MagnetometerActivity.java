@@ -19,7 +19,7 @@ public class MagnetometerActivity extends Activity implements SensorEventListene
 
     protected void onResume() {
         super.onResume();
-        mSensorManager.registerListener(this, Magnetometer, SensorManager.SENSOR_DELAY_NORMAL);
+        mSensorManager.registerListener(this, Magnetometer, SensorManager. SENSOR_DELAY_NORMAL);
     }
 
     protected void onPause() {
