@@ -90,7 +90,7 @@ class Klok : Fragment() {
         val alarmManager = context!!.getSystemService(Context.ALARM_SERVICE) as AlarmManager
        view.findViewById<SwitchMaterial>(R.id.s_7_00).setOnCheckedChangeListener { _, isChecked ->
            if (isChecked) {
-               Toast.makeText(activity, "Jesse wordt wakker doofus", Toast.LENGTH_SHORT).show();
+               Toast.makeText(activity, "Wakker worden!!!!!" , Toast.LENGTH_SHORT).show();
                val calendar: Calendar = Calendar.getInstance().apply {
                    timeInMillis = System.currentTimeMillis()
                    set(Calendar.HOUR_OF_DAY, 14)
