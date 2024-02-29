@@ -18,6 +18,7 @@ import androidx.navigation.Navigation
 import kotlinx.coroutines.delay
 import java.math.RoundingMode
 import java.text.DecimalFormat
+import kotlin.math.roundToInt
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -65,26 +66,21 @@ class kompas : Fragment(), SensorEventListener {
 
         return view
     }
-    override fun onSensorChanged(event: SensorEvent) {
 
+
+    override fun onSensorChanged(event: SensorEvent) {
         if (event.sensor.type == Sensor.TYPE_MAGNETIC_FIELD) {
 
-            var mGeomagnetic = emptyArray<Float>()
             //System.arraycopy(event.values, 0, mGeomagnetic, 0, 3);
-            Log.println(Log.INFO, "SAK", "Magneto[0]] ${event.values[0].toString()}")
-            val mag = event.values[0]
-            val df = DecimalFormat("#")
-            df.roundingMode = RoundingMode.CEILING
-            val magrounded = println(df.format(mag))
-            this.view?.findViewById<TextView>(R.id.compasheading)?.text = magrounded.toString()
+            val mGeomagnetic = event.values
+            Log.println(Log.INFO, "SAK", "mag is $mGeomagnetic")
+            this.view?.findViewById<TextView>(R.id.compasheading)?.text = mGeomagnetic.toString()
 
         }
         if (event.sensor.type == Sensor.TYPE_ACCELEROMETER) {
 
-            val accelx = event.values[0]
-            val accely = event.values[1]
-            Log.println(Log.INFO, "SAK", "X is ${accelx.toString()}")
-            Log.println(Log.INFO, "SAK", "Y is ${accely.toString()}")
+            val mGravity = event.values
+            Log.println(Log.INFO, "SAK", "accel is ${mGravity.toString()}")
 
         }
 
