@@ -13,34 +13,150 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <ImageButton
-        android:id="@+id/kaart_to_grotekaart"
-        android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:contentDescription="n"
-        android:src="@drawable/de_kaart"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Space
-        android:id="@+id/spatie"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginBottom="511dp"
-        app:layout_constraintBottom_toTopOf="@+id/kaart_to_grotekaart"
+    <HorizontalScrollView
+        android:id="@+id/bovenbalk"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_weight="0.15"
+        android:fillViewport="true"
+        android:scrollbarAlwaysDrawHorizontalTrack="true"
+        app:layout_constraintBottom_toTopOf="@+id/tijd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wekkers" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+
+            android:id="@+id/topbar"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:background="@color/black"
+            android:divider="?android:attr/dividerHorizontal"
+            android:orientation="horizontal"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:showDividers="middle"
+            app:layout_constraintBottom_toTopOf="@id/tijd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25" />
+
+            <ImageButton
+                android:id="@+id/clock_to_agenda"
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:layout_weight="0.25"
+                android:contentDescription="@string/klok_naar_agenda"
+                android:scaleType="fitXY"
+                android:src="@drawable/agenda"
+                tools:layout_editor_absoluteX="153dp"
+                tools:layout_editor_absoluteY="227dp" />
+
+            <Space
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25" />
+
+            <ImageButton
+                android:id="@+id/clock_to_kompas"
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:layout_weight="0.100"
+                android:contentDescription="@string/klok_naar_kompas"
+                android:scaleType="fitXY"
+                android:src="@drawable/kompas"
+                tools:layout_editor_absoluteX="142dp"
+                tools:layout_editor_absoluteY="268dp" />
+
+
+            <Space
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25" />
+
+            <ImageButton
+                android:id="@+id/clock_to_clock"
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:layout_weight="0.100"
+                android:contentDescription="@string/klok_naar_klok"
+                android:scaleType="fitXY"
+                android:src="@drawable/clock"
+                tools:layout_editor_absoluteX="83dp"
+                tools:layout_editor_absoluteY="262dp" />
+
+            <Space
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25" />
+
+            <ImageButton
+                android:id="@+id/clock_to_rekenmachine"
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:layout_weight="0.100"
+                android:contentDescription="@string/klok_naar_rekenmachine"
+                android:scaleType="fitXY"
+                android:src="@drawable/calculator_icon_vector_savings_finances_260nw_1703347114"
+                tools:layout_editor_absoluteX="83dp"
+                tools:layout_editor_absoluteY="262dp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25" />
+
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:id="@+id/tijd"
+        android:layout_width="match_parent"
+        android:layout_height="207dp"
+        android:layout_marginBottom="52dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/wekkers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bovenbalk">
+
+        <AnalogClock
+            android:id="@+id/analoge_klok"
+            android:layout_width="122dp"
+            android:layout_height="139dp"
+            android:background="#717171"
+            android:outlineSpotShadowColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/digitale_klok"
+            android:layout_width="250dp"
+            android:layout_height="92dp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#FFFFFF"
+            android:text="@string/klok"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="34sp" />
+
+    </LinearLayout>
 
     <ScrollView
         android:id="@+id/wekkers"
         android:layout_width="410dp"
         android:layout_height="250dp"
         android:layout_marginEnd="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/spatie"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tijd"
+        app:layout_constraintBottom_toTopOf="@id/kaart_to_grotekaart"
+        tools:layout_editor_absoluteY="337dp">
 
         <LinearLayout
             android:id="@+id/lijstwekker"
@@ -59,7 +175,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:backgroundTint="#000000"
-                    android:text="07:00"
+                    android:text="@string/_07_00"
                     android:textColor="#000" />
 
                 <com.google.android.material.switchmaterial.SwitchMaterial
@@ -80,7 +196,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="07:15"
+                    android:text="@string/_07_15"
                     android:textColor="#000" />
 
                 <com.google.android.material.switchmaterial.SwitchMaterial
@@ -100,7 +216,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="07:30"
+                    android:text="@string/_07_30"
                     android:textColor="#000" />
 
                 <com.google.android.material.switchmaterial.SwitchMaterial
@@ -120,7 +236,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="07:45"
+                    android:text="@string/_07_45"
                     android:textColor="#000" />
 
                 <com.google.android.material.switchmaterial.SwitchMaterial
@@ -140,7 +256,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="08:00"
+                    android:text="@string/_08_00"
                     android:textColor="#000" />
 
                 <com.google.android.material.switchmaterial.SwitchMaterial
@@ -160,7 +276,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="08:15"
+                    android:text="@string/_08_15"
                     android:textColor="#000" />
 
                 <com.google.android.material.switchmaterial.SwitchMaterial
@@ -180,7 +296,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="08:30"
+                    android:text="@string/_08_30"
                     android:textColor="#000" />
 
                 <com.google.android.material.switchmaterial.SwitchMaterial
@@ -200,7 +316,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="08:45"
+                    android:text="@string/_08_45"
                     android:textColor="#000" />
 
                 <com.google.android.material.switchmaterial.SwitchMaterial
@@ -220,7 +336,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="09:00"
+                    android:text="@string/_09_00"
                     android:textColor="#000" />
 
                 <com.google.android.material.switchmaterial.SwitchMaterial
@@ -240,7 +356,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="09:15"
+                    android:text="@string/_09_15"
                     android:textColor="#000" />
 
                 <com.google.android.material.switchmaterial.SwitchMaterial
@@ -260,7 +376,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="09:30"
+                    android:text="@string/_09_30"
                     android:textColor="#000" />
 
                 <com.google.android.material.switchmaterial.SwitchMaterial
@@ -280,7 +396,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="09:45"
+                    android:text="@string/_09_45"
                     android:textColor="#000" />
 
                 <com.google.android.material.switchmaterial.SwitchMaterial
@@ -300,7 +416,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="10:00"
+                    android:text="@string/_10_00"
                     android:textColor="#000" />
 
                 <com.google.android.material.switchmaterial.SwitchMaterial
@@ -320,7 +436,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="10:15"
+                    android:text="@string/_10_15"
                     android:textColor="#000" />
 
                 <com.google.android.material.switchmaterial.SwitchMaterial
@@ -332,118 +448,16 @@
         </LinearLayout>
     </ScrollView>
 
-    <LinearLayout
-        android:id="@+id/tijd"
+    <ImageButton
+        android:id="@+id/kaart_to_grotekaart"
         android:layout_width="match_parent"
-        android:layout_height="207dp"
-        android:layout_marginBottom="52dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/wekkers"
-        app:layout_constraintTop_toTopOf="@+id/bovenbalk"
-        tools:layout_editor_absoluteX="20dp">
-
-        <AnalogClock
-            android:id="@+id/analoge_klok"
-            android:layout_width="122dp"
-            android:layout_height="139dp"
-            android:background="#717171"
-            android:outlineSpotShadowColor="#FFFFFF" />
-
-        <TextView
-            android:id="@+id/digitale_klok"
-            android:layout_width="250dp"
-            android:layout_height="92dp"
-            android:layout_marginTop="30dp"
-            android:backgroundTint="#FFFFFF"
-            android:text="Klok"
-            android:textAlignment="center"
-            android:textColor="#000"
-            android:textSize="34sp" />
-    </LinearLayout>
-
-    <HorizontalScrollView
-        android:id="@+id/bovenbalk"
-        android:layout_width="426dp"
-        android:layout_height="72dp"
-        android:layout_weight="0.15"
+        android:layout_height="160dp"
+        android:contentDescription="@string/grote_kaart"
+        android:src="@drawable/de_kaart"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/tijd">
-
-        <LinearLayout
-
-            android:id="@+id/topbar"
-            android:layout_width="200dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="64dp"
-            android:background="@color/black"
-            android:divider="?android:attr/dividerHorizontal"
-            android:orientation="horizontal"
-            android:showDividers="middle"
-
-            >
-
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.15" />
-
-            <ImageButton
-                android:id="@+id/clock_to_agenda"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_weight="0.13"
-                android:scaleType="fitXY"
-                android:src="@drawable/agenda"
-                tools:layout_editor_absoluteX="153dp"
-                tools:layout_editor_absoluteY="227dp" />
-
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.15" />
-
-            <ImageButton
-                android:id="@+id/clock_to_kompas"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_weight="0.13"
-                android:scaleType="fitXY"
-                android:src="@drawable/kompas"
-                tools:layout_editor_absoluteX="142dp"
-                tools:layout_editor_absoluteY="268dp" />
-
-
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.15" />
-
-            <ImageButton
-                android:id="@+id/clock_to_clock"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_weight="0.13"
-                android:scaleType="fitXY"
-                android:src="@drawable/clock"
-                tools:layout_editor_absoluteX="83dp"
-                tools:layout_editor_absoluteY="262dp" />
-
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.15" />
-
-            <androidx.constraintlayout.utils.widget.ImageFilterButton
-                android:id="@+id/imageFilterButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.15"
-                android:src="@drawable/calculator_icon_vector_savings_finances_260nw_1703347114" />
-
-        </LinearLayout>
-    </HorizontalScrollView>
+        app:layout_constraintTop_toBottomOf="@id/wekkers" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
