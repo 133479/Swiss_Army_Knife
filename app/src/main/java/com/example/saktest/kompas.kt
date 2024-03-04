@@ -69,21 +69,21 @@ class kompas : Fragment(), SensorEventListener {
 
 
     override fun onSensorChanged(event: SensorEvent) {
+
+
         if (event.sensor.type == Sensor.TYPE_MAGNETIC_FIELD) {
 
             //System.arraycopy(event.values, 0, mGeomagnetic, 0, 3);
-            val mGeomagnetic = event.values
+            val mGeomagnetic = "${event.values[0]} ${event.values[1]} ${event.values[2]}"
             Log.println(Log.INFO, "SAK", "mag is $mGeomagnetic")
-            this.view?.findViewById<TextView>(R.id.compasheading)?.text = mGeomagnetic.toString()
+            this.view?.findViewById<TextView>(R.id.compasheading)?.text = mGeomagnetic
 
         }
         if (event.sensor.type == Sensor.TYPE_ACCELEROMETER) {
 
-            val mGravity = event.values
-            Log.println(Log.INFO, "SAK", "accel is ${mGravity.toString()}")
-
+            val mGravity = "${event.values[0]} ${event.values[1]} ${event.values[2]}"
+            Log.println(Log.INFO, "SAK", "accel is $mGravity")
         }
-
     }
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {}
