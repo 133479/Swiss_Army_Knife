@@ -1,6 +1,7 @@
 package com.example.saktest
 
 import android.app.Activity
+import android.hardware.GeomagneticField
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
@@ -69,7 +70,12 @@ class kompas : Fragment(), SensorEventListener {
 
 
     override fun onSensorChanged(event: SensorEvent) {
-
+        val Geomagnetic:Float = "${mGeomagnetic}"
+        val Gravity:Float = "${mGravity}"
+        val R:Float
+        val I:Float
+    val succes: Boolean = SensorManager.getRotationMatrix(R, I, Gravity, Geomagnetic )
+        val orientation:FloatArray[3] =
 
         if (event.sensor.type == Sensor.TYPE_MAGNETIC_FIELD) {
 
@@ -84,6 +90,7 @@ class kompas : Fragment(), SensorEventListener {
             val mGravity = "${event.values[0]} ${event.values[1]} ${event.values[2]}"
             Log.println(Log.INFO, "SAK", "accel is $mGravity")
         }
+
     }
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {}
