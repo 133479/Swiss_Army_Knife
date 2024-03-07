@@ -41,6 +41,9 @@
         <action
             android:id="@+id/action_klok_to_grotekaart"
             app:destination="@id/grotekaart" />
+        <action
+            android:id="@+id/action_klok_to_rekenmachine"
+            app:destination="@id/rekenmachine" />
     </fragment>
     <fragment
         android:id="@+id/kompas"
@@ -55,5 +58,20 @@
         <action
             android:id="@+id/action_grotekaart_to_klok"
             app:destination="@id/klok" />
+    </fragment>
+    <fragment
+        android:id="@+id/rekenmachine"
+        android:name="com.example.saktest.rekenmachine"
+        android:label="fragment_rekenmachine"
+        tools:layout="@layout/fragment_rekenmachine" >
+        <action
+            android:id="@+id/action_rekenmachine_to_klok"
+            app:destination="@id/klok" />
+        <action
+            android:id="@+id/action_rekenmachine_to_agenda"
+            app:destination="@id/agenda" />
+        <action
+            android:id="@+id/action_rekenmachine_to_kompas"
+            app:destination="@id/kompas" />
     </fragment>
 </navigation>
