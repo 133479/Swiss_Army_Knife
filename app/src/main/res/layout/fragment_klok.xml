@@ -20,7 +20,7 @@
         android:layout_weight="0.15"
         android:fillViewport="true"
         android:scrollbarAlwaysDrawHorizontalTrack="true"
-        app:layout_constraintBottom_toTopOf="@+id/tijd"
+        app:layout_constraintBottom_toTopOf="@+id/spatieboven"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -36,7 +36,7 @@
             android:paddingStart="40dp"
             android:paddingEnd="40dp"
             android:showDividers="middle"
-            app:layout_constraintBottom_toTopOf="@id/tijd"
+            app:layout_constraintBottom_toTopOf="@id/spatieboven"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -116,6 +116,16 @@
         </LinearLayout>
     </HorizontalScrollView>
 
+    <Space
+        android:id="@+id/spatieboven"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginEnd="411dp"
+        app:layout_constraintBottom_toTopOf="@+id/tijd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bovenbalk" />
+
     <LinearLayout
         android:id="@+id/tijd"
         android:layout_width="match_parent"
@@ -125,7 +135,7 @@
         app:layout_constraintBottom_toTopOf="@+id/wekkers"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bovenbalk">
+        app:layout_constraintTop_toBottomOf="@+id/spatieboven">
 
         <AnalogClock
             android:id="@+id/analoge_klok"
@@ -161,7 +171,7 @@
         <LinearLayout
             android:id="@+id/lijstwekker"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <LinearLayout
@@ -448,6 +458,16 @@
         </LinearLayout>
     </ScrollView>
 
+    <Space
+        android:id="@+id/spatie"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginEnd="411dp"
+        app:layout_constraintBottom_toTopOf="@id/kaart_to_grotekaart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wekkers" />
+
     <ImageButton
         android:id="@+id/kaart_to_grotekaart"
         android:layout_width="match_parent"
@@ -457,7 +477,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/wekkers" />
+        app:layout_constraintTop_toBottomOf="@id/spatie" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
