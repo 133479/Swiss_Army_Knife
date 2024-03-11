@@ -19,6 +19,7 @@ import androidx.navigation.Navigation
 import kotlinx.coroutines.delay
 import java.math.RoundingMode
 import java.text.DecimalFormat
+import kotlin.math.log
 import kotlin.math.roundToInt
 
 
@@ -70,25 +71,31 @@ class kompas : Fragment(), SensorEventListener {
 
 
     override fun onSensorChanged(event: SensorEvent) {
-        val Geomagnetic:Float = "${mGeomagnetic}"
-        val Gravity:Float = "${mGravity}"
-        val R:Float
-        val I:Float
-    val succes: Boolean = SensorManager.getRotationMatrix(R, I, Gravity, Geomagnetic )
-        val orientation:FloatArray[3] =
+        var geomagnetic = FloatArray(3)
+        var gravity = FloatArray(3)
+        var R = FloatArray(9)
+        var I = FloatArray(9)
+    var succes: Boolean = SensorManager.getRotationMatrix(R, I, gravity, geomagnetic )
+        if (succes){
+            var orientation = FloatArray(3)
+            SensorManager.getOrientation(R, orientation)
+            var azimuth = orientation[0]
+            Log.println(Log.INFO, "ORI", "$azimuth")
+//            this.view?.findViewById<TextView>(R.id.compasheading)?.text = "$orientation"
+        }
+
 
         if (event.sensor.type == Sensor.TYPE_MAGNETIC_FIELD) {
 
-            //System.arraycopy(event.values, 0, mGeomagnetic, 0, 3);
-            val mGeomagnetic = "${event.values[0]} ${event.values[1]} ${event.values[2]}"
-            Log.println(Log.INFO, "SAK", "mag is $mGeomagnetic")
-            this.view?.findViewById<TextView>(R.id.compasheading)?.text = mGeomagnetic
+            geomagnetic = event.values
+//            Log.println(Log.INFO, "SAK", "Magneto is$geomagnetic")
+
 
         }
         if (event.sensor.type == Sensor.TYPE_ACCELEROMETER) {
 
-            val mGravity = "${event.values[0]} ${event.values[1]} ${event.values[2]}"
-            Log.println(Log.INFO, "SAK", "accel is $mGravity")
+            gravity = event.values
+//            Log.println(Log.INFO, "SAK", "Accelo is")
         }
 
     }
