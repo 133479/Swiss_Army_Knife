@@ -78,19 +78,19 @@ class Klok : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_klok, container, false)
-        view.findViewById<ImageButton>(R.id.clock_to_agenda).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_klok_to_agenda)
+        view.findViewById<ImageButton>(R.id.rekenmachine_to_agenda).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_klok_to_agenda)
         }
 
-        view.findViewById<ImageButton>(R.id.clock_to_kompas).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_klok_to_kompas)
+        view.findViewById<ImageButton>(R.id.rekenmachine_to_kompas).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_klok_to_kompas)
         }
 
         view.findViewById<ImageButton>(R.id.kaart_to_grotekaart).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_klok_to_grotekaart)
         }
 
-        view.findViewById<ImageButton>(R.id.clock_to_rekenmachine).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_klok_to_rekenmachine)
+        view.findViewById<ImageButton>(R.id.rekenmachine_to_rekenmachine).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_klok_to_rekenmachine)
         }
 
-
+// poging tot alarm maken maar duurde te lang
         val alarmManager = context!!.getSystemService(Context.ALARM_SERVICE) as AlarmManager
        view.findViewById<SwitchMaterial>(R.id.s_7_00).setOnCheckedChangeListener { _, isChecked ->
            if (isChecked) {

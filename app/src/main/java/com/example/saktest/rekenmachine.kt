@@ -1,10 +1,16 @@
 package com.example.saktest
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageButton
+import android.widget.TextView
+import androidx.navigation.Navigation
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,31 +35,50 @@ class rekenmachine : Fragment() {
         }
     }
 
+    @SuppressLint("SetTextI18n", "MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_rekenmachine, container, false)
-    }
+        // de plus knop
+        val view = inflater.inflate(R.layout.fragment_rekenmachine, container, false)
+        view.findViewById<Button>(R.id.addButton)!!.setOnClickListener {
+            view.findViewById<TextView>(R.id.resultTextView)!!.text = (
+                    view.findViewById<EditText>(R.id.num1EditText)!!.text.toString().toInt() +
+                            view.findViewById<EditText>(R.id.num2EditText)!!.text.toString().toInt()
+                    ).toString()
+        }
+// de min knop
+        view.findViewById<Button>(R.id.subtractButton)!!.setOnClickListener {
+            view.findViewById<TextView>(R.id.resultTextView)!!.text = (
+                    view.findViewById<EditText>(R.id.num1EditText)!!.text.toString().toInt() -
+                            view.findViewById<EditText>(R.id.num2EditText)!!.text.toString().toInt()
+                    ).toString()
+        }
+// de keer knop
+        view.findViewById<Button>(R.id.multiplyButton)!!.setOnClickListener {
+            view.findViewById<TextView>(R.id.resultTextView)!!.text = (
+                    view.findViewById<EditText>(R.id.num1EditText)!!.text.toString().toInt() *
+                            view.findViewById<EditText>(R.id.num2EditText)!!.text.toString().toInt()
+                    ).toString()
+// de delen door knop
+        }
+        view.findViewById<Button>(R.id.divideButton)!!.setOnClickListener {
+            view.findViewById<TextView>(R.id.resultTextView)!!.text = (
+                    view.findViewById<EditText>(R.id.num1EditText)!!.text.toString().toInt() /
+                            view.findViewById<EditText>(R.id.num2EditText)!!.text.toString().toInt()
+                    ).toString()
+        }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment rekenmachine.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            rekenmachine().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        view.findViewById<ImageButton>(R.id.rekenmachine_to_agenda).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_rekenmachine_to_agenda)
+        }
+
+        view.findViewById<ImageButton>(R.id.rekenmachine_to_kompas).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_rekenmachine_to_kompas)
+        }
+        view.findViewById<ImageButton>(R.id.rekenmachine_to_clock).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_rekenmachine_to_klok)
+        }
+        // return de view om alles te kunnen zien
+        return view
     }
 }
+

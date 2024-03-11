@@ -48,7 +48,7 @@
                 android:layout_weight="0.25" />
 
             <ImageButton
-                android:id="@+id/clock_to_agenda"
+                android:id="@+id/rekenmachine_to_agenda"
                 android:layout_width="80dp"
                 android:layout_height="70dp"
                 android:layout_weight="0.25"
@@ -64,7 +64,7 @@
                 android:layout_weight="0.25" />
 
             <ImageButton
-                android:id="@+id/clock_to_kompas"
+                android:id="@+id/rekenmachine_to_kompas"
                 android:layout_width="80dp"
                 android:layout_height="70dp"
                 android:layout_weight="0.100"
@@ -81,7 +81,7 @@
                 android:layout_weight="0.25" />
 
             <ImageButton
-                android:id="@+id/clock_to_clock"
+                android:id="@+id/rekenmachine_to_clock"
                 android:layout_width="80dp"
                 android:layout_height="70dp"
                 android:layout_weight="0.100"
@@ -97,7 +97,7 @@
                 android:layout_weight="0.25" />
 
             <ImageButton
-                android:id="@+id/clock_to_rekenmachine"
+                android:id="@+id/rekenmachine_to_rekenmachine"
                 android:layout_width="80dp"
                 android:layout_height="70dp"
                 android:layout_weight="0.100"
