@@ -53,5 +53,4 @@ class landing : Fragment() {
 
         return view
     }
-
 }

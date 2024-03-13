@@ -43,4 +43,13 @@
         app:layout_constraintStart_toEndOf="@+id/btn_agenda_agenda"
         tools:layout_editor_absoluteY="33dp" />
 
+    <ImageButton
+        android:id="@+id/clock_to_clock"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/clock"
+        tools:layout_editor_absoluteX="83dp"
+        tools:layout_editor_absoluteY="262dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
