@@ -7,6 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.Navigation
+import kotlinx.coroutines.delay
+import java.util.*
+import java.util.concurrent.Executor
+import java.util.concurrent.Executors
+import java.util.concurrent.TimeUnit
+import kotlin.concurrent.timer
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -37,14 +43,14 @@ class landing : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
        val view = inflater.inflate(R.layout.fragment_landing, container, false)
-        view.findViewById<Button>(R.id.Agendaknop).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_landing_to_agenda)
-        }
+
+
+        Executors.newSingleThreadScheduledExecutor().schedule({
+            Navigation.findNavController(view).navigate(R.id.action_landing_to_klok)
+        }, 2, TimeUnit.SECONDS)
+
+
+
         return view
     }
-
-
-
-
-
-
 }
