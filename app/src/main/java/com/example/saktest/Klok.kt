@@ -62,10 +62,11 @@ class Klok : Fragment() {
         }
     }
 
+    // tijd vragen voor de klok
     private fun tick() {
         var calendar = Calendar.getInstance()
         val simpleDateFormat = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
-
+// plaats maken voor de klok waar hij de tijd kan neerzetten
         val currentTime = simpleDateFormat.format(calendar.time)
         this.view?.findViewById<TextView>(R.id.digitale_klok)?.text = currentTime
 
@@ -76,7 +77,7 @@ class Klok : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        // knopjes om naar de andere pagina te gaan
         val view = inflater.inflate(R.layout.fragment_klok, container, false)
         view.findViewById<ImageButton>(R.id.rekenmachine_to_agenda).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_klok_to_agenda)
         }

@@ -69,7 +69,7 @@ class rekenmachine : Fragment() {
                             view.findViewById<EditText>(R.id.num2EditText)!!.text.toString().toInt()
                     ).toString()
         }
-
+// de navigatie naar de andere pagina's
         view.findViewById<ImageButton>(R.id.rekenmachine_to_agenda).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_rekenmachine_to_agenda)
         }
 
