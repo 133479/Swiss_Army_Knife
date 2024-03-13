@@ -12,11 +12,14 @@ import android.os.*
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.Navigation
 import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.google.android.material.switchmaterial.SwitchMaterial
 import java.util.*
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -78,6 +81,7 @@ class Klok : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_klok, container, false)
+
         view.findViewById<ImageButton>(R.id.clock_to_agenda).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_klok_to_agenda)
         }
 
