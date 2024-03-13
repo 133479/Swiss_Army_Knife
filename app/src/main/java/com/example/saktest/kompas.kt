@@ -1,5 +1,6 @@
 package com.example.saktest
 
+
 import android.app.Activity
 import android.hardware.GeomagneticField
 import android.hardware.Sensor
@@ -36,28 +37,31 @@ private const val ARG_PARAM2 = "param2"
 
 
 
+
 class kompas : Fragment(), SensorEventListener {
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
 
     private var mSensorManager: SensorManager? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mSensorManager = this.activity!!.getSystemService(Activity.SENSOR_SERVICE) as SensorManager
+
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
     }
 
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         var view = inflater.inflate(R.layout.fragment_kompas, container, false)
         view.findViewById<Button>(R.id.btn_kompas_klok).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_kompas_to_klok)
         }
@@ -150,5 +154,4 @@ class kompas : Fragment(), SensorEventListener {
 
 
 }
-
 

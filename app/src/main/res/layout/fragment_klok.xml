@@ -2,57 +2,482 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
+    android:id="@+id/pagina_klok"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#808080"
+    android:backgroundTint="#808080"
+    android:foregroundTint="#E80505"
+    android:outlineSpotShadowColor="#ED1111"
     tools:context=".landing">
 
     <!-- TODO: Update blank fragment layout -->
 
-    <TextView
-        android:id="@+id/clock"
-        android:layout_width="406dp"
-        android:layout_height="122dp"
-        android:text="@string/hello_blank_fragment"
-        android:textSize="30sp"
+    <HorizontalScrollView
+        android:id="@+id/bovenbalk"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_weight="0.15"
+        android:fillViewport="true"
+        android:scrollbarAlwaysDrawHorizontalTrack="true"
+        app:layout_constraintBottom_toTopOf="@+id/spatieboven"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+
+            android:id="@+id/topbar"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:background="@color/black"
+            android:divider="?android:attr/dividerHorizontal"
+            android:orientation="horizontal"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:showDividers="middle"
+            app:layout_constraintBottom_toTopOf="@id/spatieboven"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25" />
+
+            <ImageButton
+                android:id="@+id/clock_to_agenda"
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:layout_weight="0.25"
+                android:contentDescription="@string/klok_naar_agenda"
+                android:scaleType="fitXY"
+                android:src="@drawable/agenda"
+                tools:layout_editor_absoluteX="153dp"
+                tools:layout_editor_absoluteY="227dp" />
+
+            <Space
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25" />
+
+            <ImageButton
+                android:id="@+id/clock_to_kompas"
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:layout_weight="0.100"
+                android:contentDescription="@string/klok_naar_kompas"
+                android:scaleType="fitXY"
+                android:src="@drawable/kompas"
+                tools:layout_editor_absoluteX="142dp"
+                tools:layout_editor_absoluteY="268dp" />
+
+
+            <Space
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25" />
+
+            <ImageButton
+                android:id="@+id/clock_to_clock"
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:layout_weight="0.100"
+                android:contentDescription="@string/klok_naar_klok"
+                android:scaleType="fitXY"
+                android:src="@drawable/clock"
+                tools:layout_editor_absoluteX="83dp"
+                tools:layout_editor_absoluteY="262dp" />
+
+            <Space
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25" />
+
+            <ImageButton
+                android:id="@+id/clock_to_rekenmachine"
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:layout_weight="0.100"
+                android:contentDescription="@string/klok_naar_rekenmachine"
+                android:scaleType="fitXY"
+                android:src="@drawable/calculator_icon_vector_savings_finances_260nw_1703347114"
+                tools:layout_editor_absoluteX="83dp"
+                tools:layout_editor_absoluteY="262dp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25" />
+
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <Space
+        android:id="@+id/spatieboven"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginEnd="411dp"
+        app:layout_constraintBottom_toTopOf="@+id/tijd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bovenbalk" />
+
+    <LinearLayout
+        android:id="@+id/tijd"
+        android:layout_width="match_parent"
+        android:layout_height="207dp"
+        android:layout_marginBottom="52dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/wekkers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spatieboven">
+
+        <AnalogClock
+            android:id="@+id/analoge_klok"
+            android:layout_width="122dp"
+            android:layout_height="139dp"
+            android:background="#717171"
+            android:outlineSpotShadowColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/digitale_klok"
+            android:layout_width="250dp"
+            android:layout_height="92dp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#FFFFFF"
+            android:text="@string/klok"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="34sp" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/wekkers"
+        android:layout_width="410dp"
+        android:layout_height="250dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tijd"
+        app:layout_constraintBottom_toTopOf="@id/kaart_to_grotekaart"
+        tools:layout_editor_absoluteY="337dp">
+
+        <LinearLayout
+            android:id="@+id/lijstwekker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/t_0700"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#000000"
+                    android:text="@string/_07_00"
+                    android:textColor="#000" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/s_7_00"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/t_7015"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/_07_15"
+                    android:textColor="#000" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/s_0715"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/t_0730"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/_07_30"
+                    android:textColor="#000" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/s_0730"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/t_0745"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/_07_45"
+                    android:textColor="#000" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/s_0745"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/t_0800"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/_08_00"
+                    android:textColor="#000" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/s_0800"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/t_0815"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/_08_15"
+                    android:textColor="#000" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/s_0815"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/t_0830"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/_08_30"
+                    android:textColor="#000" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/s_0830"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/t_0845"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/_08_45"
+                    android:textColor="#000" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/s_0845"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/t_0900"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/_09_00"
+                    android:textColor="#000" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/s_0900"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/t_0915"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/_09_15"
+                    android:textColor="#000" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/s_0915"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/t_0930"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/_09_30"
+                    android:textColor="#000" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/s_0930"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/t_0945"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/_09_45"
+                    android:textColor="#000" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/s_0945"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/t_1000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/_10_00"
+                    android:textColor="#000" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/s_1000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/t_1015"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/_10_15"
+                    android:textColor="#000" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/s_1015"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Space
+        android:id="@+id/spatie"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginEnd="411dp"
+        app:layout_constraintBottom_toTopOf="@id/kaart_to_grotekaart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wekkers" />
+
+    <ImageButton
+        android:id="@+id/kaart_to_grotekaart"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:contentDescription="@string/grote_kaart"
+        android:src="@drawable/de_kaart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.303" />
+        app:layout_constraintTop_toBottomOf="@id/spatie" />
 
-    <Button
-        android:id="@+id/Klokknop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="94dp"
-        android:text="Klok"
-        app:layout_constraintBottom_toTopOf="@+id/clock"
-        app:layout_constraintEnd_toStartOf="@+id/Agendaknop"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/Agendaknop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Agenda"
-        app:layout_constraintBottom_toTopOf="@+id/clock"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16" />
-
-    <Button
-        android:id="@+id/kompasknop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="93dp"
-        android:text="Kompas"
-        app:layout_constraintBottom_toTopOf="@+id/clock"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Agendaknop"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

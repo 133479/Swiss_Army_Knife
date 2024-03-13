@@ -38,14 +38,28 @@
         <action
             android:id="@+id/action_klok_to_kompas"
             app:destination="@id/kompas" />
+
+        <action
+            android:id="@+id/action_klok_to_grotekaart"
+            app:destination="@id/grotekaart" />
+
     </fragment>
     <fragment
         android:id="@+id/kompas"
         android:name="com.example.saktest.kompas"
-        android:label="fragment_kompas"
+        android:label="fragment_kompas"  
         tools:layout="@layout/fragment_kompas" >
+      <action
+           android:id="@+id/action_kompas_to_klok"
+              app:destination="@id/klok" />
+      <fragment/>
+    <fragment
+        android:id="@+id/grotekaart"
+        android:name="com.example.saktest.grotekaart"
+        android:label="fragment_grotekaart"
+        tools:layout="@layout/fragment_grotekaart" >
         <action
-            android:id="@+id/action_kompas_to_klok"
+            android:id="@+id/action_grotekaart_to_klok"
             app:destination="@id/klok" />
     </fragment>
 </navigation>

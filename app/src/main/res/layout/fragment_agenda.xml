@@ -45,11 +45,13 @@
         app:layout_constraintStart_toEndOf="@+id/btn_agenda_agenda"
         tools:layout_editor_absoluteY="33dp" />
 
+
     <CalendarView
         android:id="@+id/calendarView"
         android:layout_width="415dp"
         android:layout_height="404dp"
         android:background="#C6C6C6"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
