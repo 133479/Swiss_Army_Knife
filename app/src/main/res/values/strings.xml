@@ -23,4 +23,12 @@
     <string name="klok_naar_rekenmachine">klok naar rekenmachine</string>
     <string name="klok">Klok</string>
     <string name="grote_kaart">grote kaart</string>
+    <string name="result">Result:</string>
+    <string name="enter_number_1">Enter number 1</string>
+    <string name="enter_number_2">Enter number 2</string>
+    <string name="delen">/</string>
+    <string name="x">x</string>
+    <string name="min">-</string>
+    <string name="plus">+</string>
+    <string name="resultaat">result</string>
 </resources>
