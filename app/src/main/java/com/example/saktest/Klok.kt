@@ -12,11 +12,9 @@ import android.os.*
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.navigation.Navigation
 import android.widget.*
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
 import com.google.android.material.switchmaterial.SwitchMaterial
 import java.util.*
 
@@ -83,10 +81,7 @@ class Klok : Fragment() {
         // knopjes om naar de andere pagina te gaan
         val view = inflater.inflate(R.layout.fragment_klok, container, false)
 
-        view.findViewById<ImageButton>(R.id.rekenmachine_to_agenda).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_klok_to_agenda)
-
-
-        view.findViewById<ImageButton>(R.id.clock_to_agenda).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_klok_to_agenda)
+        view.findViewById<ImageButton>(R.id.klok_to_agenda).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_klok_to_agenda)
 
         }
 

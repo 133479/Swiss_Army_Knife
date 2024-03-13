@@ -70,12 +70,12 @@ class rekenmachine : Fragment() {
                     ).toString()
         }
 // de navigatie naar de andere pagina's
-        view.findViewById<ImageButton>(R.id.rekenmachine_to_agenda).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_rekenmachine_to_agenda)
+        view.findViewById<ImageButton>(R.id.klok_to_agenda).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_rekenmachine_to_agenda)
         }
 
         view.findViewById<ImageButton>(R.id.rekenmachine_to_kompas).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_rekenmachine_to_kompas)
         }
-        view.findViewById<ImageButton>(R.id.rekenmachine_to_clock).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_rekenmachine_to_klok)
+        view.findViewById<ImageButton>(R.id.agenda_to_klok).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_rekenmachine_to_klok)
         }
         // return de view om alles te kunnen zien
         return view

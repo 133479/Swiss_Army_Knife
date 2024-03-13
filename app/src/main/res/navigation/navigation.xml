@@ -14,9 +14,6 @@
             android:id="@+id/action_landing_to_klok"
             app:destination="@id/klok"
             app:exitAnim="@anim/nav_default_exit_anim" />
-        <action
-            android:id="@+id/action_landing_to_agenda"
-            app:destination="@id/agenda" />
     </fragment>
     <fragment
         android:id="@+id/agenda"
@@ -26,6 +23,12 @@
         <action
             android:id="@+id/action_agenda_to_klok"
             app:destination="@id/klok" />
+        <action
+            android:id="@+id/action_agenda_to_kompas"
+            app:destination="@id/kompas" />
+        <action
+            android:id="@+id/action_agenda_to_rekenmachine"
+            app:destination="@id/rekenmachine" />
     </fragment>
     <fragment
         android:id="@+id/klok"
@@ -52,11 +55,17 @@
         android:id="@+id/kompas"
         android:name="com.example.saktest.kompas"
         android:label="fragment_kompas"  
-        tools:layout="@layout/fragment_kompas" >
-      <action
-           android:id="@+id/action_kompas_to_klok"
-              app:destination="@id/klok" />
-      <fragment/>
+        tools:layout="@layout/fragment_kompas" >>
+        <action
+            android:id="@+id/action_kompas_to_agenda"
+            app:destination="@id/agenda" />
+        <action
+            android:id="@+id/action_kompas_to_rekenmachine"
+            app:destination="@id/rekenmachine" />
+        <action
+            android:id="@+id/action_kompas_to_klok"
+            app:destination="@id/klok" />
+    </fragment>
     <fragment
         android:id="@+id/grotekaart"
         android:name="com.example.saktest.grotekaart"

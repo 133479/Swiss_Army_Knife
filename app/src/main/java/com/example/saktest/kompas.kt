@@ -2,7 +2,6 @@ package com.example.saktest
 
 
 import android.app.Activity
-import android.hardware.GeomagneticField
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
@@ -13,15 +12,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.findFragment
 import androidx.navigation.Navigation
-import kotlinx.coroutines.delay
-import java.math.RoundingMode
-import java.text.DecimalFormat
-import kotlin.math.log
-import kotlin.math.roundToInt
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -63,7 +55,7 @@ class kompas : Fragment(), SensorEventListener {
     ): View? {
 
         var view = inflater.inflate(R.layout.fragment_kompas, container, false)
-        view.findViewById<Button>(R.id.btn_kompas_klok).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_kompas_to_klok)
+        view.findViewById<Button>(R.id.agenda_to_klok).setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_kompas_to_klok)
         }
         mSensorManager!!.registerListener(this,
             mSensorManager!!.getSensorList(Sensor.TYPE_ACCELEROMETER)[0], SensorManager.SENSOR_DELAY_FASTEST);

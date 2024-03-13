@@ -48,7 +48,7 @@
                 android:layout_weight="0.25" />
 
             <ImageButton
-                android:id="@+id/rekenmachine_to_agenda"
+                android:id="@+id/klok_to_agenda"
                 android:layout_width="80dp"
                 android:layout_height="70dp"
                 android:layout_weight="0.25"
@@ -81,7 +81,7 @@
                 android:layout_weight="0.25" />
 
             <ImageButton
-                android:id="@+id/rekenmachine_to_clock"
+                android:id="@+id/agenda_to_klok"
                 android:layout_width="80dp"
                 android:layout_height="70dp"
                 android:layout_weight="0.100"

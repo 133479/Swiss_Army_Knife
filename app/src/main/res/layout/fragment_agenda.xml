@@ -11,39 +11,98 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <LinearLayout
+        android:id="@+id/topbar"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginVertical="-12dp"
+        android:background="@color/black"
+        android:divider="?android:attr/dividerHorizontal"
+        android:orientation="horizontal"
+        android:paddingStart="40dp"
+        android:paddingEnd="40dp"
+        android:showDividers="middle"
+        app:layout_constraintBottom_toTopOf="@id/de_rekenmachine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25" />
+
+        <ImageButton
+            android:id="@+id/klok_to_agenda"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_weight="0.25"
+            android:contentDescription="@string/klok_naar_agenda"
+            android:scaleType="fitXY"
+            android:src="@drawable/agenda"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="227dp" />
+
+        <Space
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25" />
+
+        <ImageButton
+            android:id="@+id/rekenmachine_to_kompas"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_weight="0.100"
+            android:contentDescription="@string/klok_naar_kompas"
+            android:scaleType="fitXY"
+            android:src="@drawable/kompas"
+            tools:layout_editor_absoluteX="142dp"
+            tools:layout_editor_absoluteY="268dp" />
+
+        <Space
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25" />
+
+        <ImageButton
+            android:id="@+id/agenda_to_klok"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_weight="0.100"
+            android:contentDescription="@string/klok_naar_klok"
+            android:scaleType="fitXY"
+            android:src="@drawable/clock"
+            tools:layout_editor_absoluteX="83dp"
+            tools:layout_editor_absoluteY="262dp" />
+
+        <Space
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25" />
+
+        <ImageButton
+            android:id="@+id/rekenmachine_to_rekenmachine"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_weight="0.100"
+            android:contentDescription="@string/klok_naar_rekenmachine"
+            android:scaleType="fitXY"
+            android:src="@drawable/calculator_icon_vector_savings_finances_260nw_1703347114"
+            tools:layout_editor_absoluteX="83dp"
+            tools:layout_editor_absoluteY="262dp" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <Button
-        android:id="@+id/btn_agenda_agenda"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Agenda"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="32dp" />
-
-    <Button
-        android:id="@+id/btn_agenda_kompas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Kompas"
-        app:layout_constraintEnd_toStartOf="@+id/btn_agenda_agenda"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="30dp" />
-
-    <Button
-        android:id="@+id/btn_agenda_clock"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Klok"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_agenda_agenda"
-        tools:layout_editor_absoluteY="33dp" />
 
 
     <CalendarView
