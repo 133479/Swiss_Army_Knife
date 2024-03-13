@@ -49,9 +49,14 @@ class landing : Fragment() {
             Navigation.findNavController(view).navigate(R.id.action_landing_to_klok)
         }, 2, TimeUnit.SECONDS)
 
+        Executors.newSingleThreadScheduledExecutor().schedule({
+            Navigation.findNavController(view).navigate(R.id.action_landing_to_klok)
+        }, 2, TimeUnit.SECONDS)
 
 
         return view
     }
 
+        return view
+    }
 }
