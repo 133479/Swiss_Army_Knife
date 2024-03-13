@@ -43,13 +43,16 @@
         app:layout_constraintStart_toEndOf="@+id/btn_agenda_agenda"
         tools:layout_editor_absoluteY="33dp" />
 
-    <ImageButton
-        android:id="@+id/clock_to_clock"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/clock"
-        tools:layout_editor_absoluteX="83dp"
-        tools:layout_editor_absoluteY="262dp" />
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="agenda"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

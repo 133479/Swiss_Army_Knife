@@ -35,5 +35,25 @@
         <action
             android:id="@+id/action_klok_to_agenda"
             app:destination="@id/agenda" />
+        <action
+            android:id="@+id/action_klok_to_kompas"
+            app:destination="@id/kompas" />
+        <action
+            android:id="@+id/action_klok_to_grotekaart"
+            app:destination="@id/grotekaart" />
+    </fragment>
+    <fragment
+        android:id="@+id/kompas"
+        android:name="com.example.saktest.kompas"
+        android:label="fragment_kompas"
+        tools:layout="@layout/fragment_kompas" />
+    <fragment
+        android:id="@+id/grotekaart"
+        android:name="com.example.saktest.grotekaart"
+        android:label="fragment_grotekaart"
+        tools:layout="@layout/fragment_grotekaart" >
+        <action
+            android:id="@+id/action_grotekaart_to_klok"
+            app:destination="@id/klok" />
     </fragment>
 </navigation>
